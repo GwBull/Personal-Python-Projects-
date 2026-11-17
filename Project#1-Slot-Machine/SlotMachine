@@ -3,11 +3,15 @@ import random
 print("***********************************")
 print("WELCOME TO THE SLOT MACHINE")
 print("***********************************")
+print("You have $1000 to play with. Try your luck and see if you can hit the jackpot!")
+print("if you hit three matching symbols, you win 10 times your bet amount!")
+print("if you hit two matching symbols, you win 2 times your bet amount!")
+print("if you hit no matching symbols, you lose your bet amount.")
 
 symbols = ["🍒", "🍋", "🔔", "⭐", "7️⃣"]
 money = 1000
 
-print(f"you have:"{money}"to play with")
+print(f"you have:${money} to play with")
 
 while money > 0:
 
@@ -37,7 +41,7 @@ else:
     else:
     
         print(f"Sorry, you lost with {wheel1} {wheel2} {wheel3}.")
-        money -= bet  # Lose the bet amount
+        money = money - bet  # Lose the bet amount
 
     print("Type 'exit' to quit or press Enter to continue playing.")
 

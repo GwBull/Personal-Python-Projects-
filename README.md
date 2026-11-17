@@ -1,5 +1,5 @@
 # Personal-Python-Projects-
-personal python projects 
+Directory For All Projects
 
 ---
 

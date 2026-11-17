@@ -15,37 +15,35 @@ print(f"you have:${money} to play with")
 
 while money > 0:
 
-print("Please enter your current bet amount")
+    print("Please enter your current bet amount")
 
-bet = int(input())
+    bet = int(input())
 
-if bet > money:
-    print("You don't have enough money to place that bet.")
-else:
-    print(f"You have placed a bet of: {bet} spinning the slot machine...")
-
-    # Simulate the slot machine spinning
-    
-    wheel1 = random.choice(symbols)
-    wheel2 = random.choice(symbols)
-    wheel3 = random.choice(symbols)
-
-    if wheel1 == wheel2 == wheel3:
-        print(f"Congratulations! You hit the jackpot with {wheel1} {wheel2} {wheel3}!")
-        money += bet * 10  # Jackpot pays 10 times the bet
-
-    elif wheel1 == wheel2 or wheel2 == wheel3 or wheel1 == wheel3:
-        print(f"You won with {wheel1} {wheel2} {wheel3}!")
-        money += bet * 2  # Two matching symbols pay 2 times the bet
-
+    if bet > money:
+        print("You don't have enough money to place that bet.")
     else:
-    
-        print(f"Sorry, you lost with {wheel1} {wheel2} {wheel3}.")
-        money = money - bet  # Lose the bet amount
+        print(f"You have placed a bet of: {bet} spinning the slot machine...")
 
-    print("Type 'exit' to quit or press Enter to continue playing.")
+        # Simulate the slot machine spinning
+        wheel1 = random.choice(symbols)
+        wheel2 = random.choice(symbols)
+        wheel3 = random.choice(symbols)
 
-     choice = input()
+        if wheel1 == wheel2 == wheel3:
+            print(f"Congratulations! You hit the jackpot with {wheel1} {wheel2} {wheel3}!")
+            money = money + bet * 10  # Jackpot pays 10 times the bet
+
+        elif wheel1 == wheel2 or wheel2 == wheel3 or wheel1 == wheel3:
+            print(f"You won with {wheel1} {wheel2} {wheel3}!")
+            money = money + bet * 2  # Two matching symbols pay 2 times the bet
+
+        else:
+            print(f"Sorry, you lost with {wheel1} {wheel2} {wheel3}.")
+            money = money - bet  # Lose the bet amount
+
+        print("Type 'exit' to quit or press Enter to continue playing.")
+
+    choice = input()
 
     if choice == "exit":
         print("Thanks for playing!")

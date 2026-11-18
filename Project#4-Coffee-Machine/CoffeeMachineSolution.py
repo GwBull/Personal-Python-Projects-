@@ -46,6 +46,13 @@ def calculate_change(total, cost):
 def calculatetotal_money(dimes, nickels, qaurters, pennies):
     total = pennies*0.01 + nickels*0.05 + dimes*0.10 + qaurters*0.25
     return total
+## define funnction for when we turn the machine back on 
+def printoff(print_report):
+    print("Turning off the coffee machine. Goodbye!")
+    print("the total money in the machine is: $", MachineMoney)
+    print("the total resources left in the machine are: ")
+    print_report()
+    exit()  
 
 logo = r"""
       ( (
@@ -60,68 +67,86 @@ logo = r"""
 
 MachineMoney = 0
 
+machine_on = True
+
 print(logo)
-answer = input("please select a function (espresso(1)/latte(2)/cappuccino(3) OR report(4)): ")
 
-match answer:
-    case "1":
-        print("Espresso")
-    case "2":
-        print("Latte")
-    case "3":
-        print("Cappuccino")
-    case "4":
-        print_report()
-    case _:
-        print("Invalid choice")
+while  machine_on == True:
 
-if answer == "1":
-    if resources["water"] >= MENU["espresso"]["ingredients"]["water"] and resources["coffee"] >= MENU["espresso"]["ingredients"]["coffee"]:
-        resources["water"] -= MENU["espresso"]["ingredients"]["water"]
-        resources["coffee"] -= MENU["espresso"]["ingredients"]["coffee"]
-        print("Here is your espresso. Enjoy!")
-        MachineMoney += MENU["espresso"]["cost"]
-    else:
-        print("Sorry, there is not enough resources to make an espresso.")
+    answer = input("please select a function (espresso(1)/latte(2)/cappuccino(3) OR report(4)): ")
 
-elif answer == "2":
-    print("Please inter coins cost of latte is $2.50")
-    dimes = int(input("How many dimes?: "))
-    nickels = int(input("How many nickels?: "))
-    qaurters = int(input("How many quarters?: "))
-    pennies = int(input("How many pennies?: "))
+    match answer:
+        case "1":
+            print("Espresso")
+        case "2":
+            print("Latte")
+        case "3":
+            print("Cappuccino")
+        case "4":
+            print_report()
+        case"5":
+            printoff()
+        case _:
+            print("Invalid choice")
 
-    pennies = pennies * 0.01
-    nickels = nickels * 0.05
-    dimes = dimes * 0.10
-    qaurters = qaurters * 0.25
+    if answer == "1":
+        if resources["water"] >= MENU["espresso"]["ingredients"]["water"] and resources["coffee"] >= MENU["espresso"]["ingredients"]["coffee"]:
+            resources["water"] -= MENU["espresso"]["ingredients"]["water"]
+            resources["coffee"] -= MENU["espresso"]["ingredients"]["coffee"]
+            print("Here is your espresso. Enjoy!")
+            MachineMoney += MENU["espresso"]["cost"]
+        else:
+            print("Sorry, there is not enough resources to make an espresso.")
 
-    total = pennies + nickels + dimes + qaurters
+    elif answer == "2":
+        print("Please inter coins cost of latte is $2.50")
+        dimes = int(input("How many dimes?: "))
+        nickels = int(input("How many nickels?: "))
+        qaurters = int(input("How many quarters?: "))
+        pennies = int(input("How many pennies?: "))
 
-    if total < MENU["latte"]["cost"]:
-        print("Sorry, that's not enough money. Money refunded.")
+        pennies = pennies * 0.01
+        nickels = nickels * 0.05
+        dimes = dimes * 0.10
+        qaurters = qaurters * 0.25
 
-    change = calculate_change(total, MENU["latte"]["cost"])
-    if change > 0:
-        print(f"Here is your change: ${change:.2f}")
+        total = pennies + nickels + dimes + qaurters
 
-    if resources["water"] >= MENU["latte"]["ingredients"]["water"] and resources["milk"] >= MENU["latte"]["ingredients"]["milk"] and resources["coffee"] >= MENU["latte"]["ingredients"]["coffee"]:
-        resources["water"] -= MENU["latte"]["ingredients"]["water"]
-        resources["milk"] -= MENU["latte"]["ingredients"]["milk"]
-        resources["coffee"] -= MENU["latte"]["ingredients"]["coffee"]
-        print("Here is your latte. Enjoy!")
-        MachineMoney += MENU["latte"]["cost"]
-    else:
-        print("Sorry, there is not enough resources to make a latte.")
+        if total < MENU["latte"]["cost"]:
+            print("Sorry, that's not enough money. Money refunded.")
 
-elif answer == "3":
-    if resources["water"] >= MENU["cappuccino"]["ingredients"]["water"] and resources["milk"] >= MENU["cappuccino"]["ingredients"]["milk"] and resources["coffee"] >= MENU["cappuccino"]["ingredients"]["coffee"]:
-        resources["water"] -= MENU["cappuccino"]["ingredients"]["water"]
-        resources["milk"] -= MENU["cappuccino"]["ingredients"]["milk"]
-        resources["coffee"] -= MENU["cappuccino"]["ingredients"]["coffee"]
-        print("Here is your cappuccino. Enjoy!")
-        MachineMoney += MENU["cappuccino"]["cost"]
-    else:
-        print("Sorry, there is not enough resources to make a cappuccino.")
+        change = calculate_change(total, MENU["latte"]["cost"])
+        if change > 0:
+            print(f"Here is your change: ${change:.2f}")
+
+        if resources["water"] >= MENU["latte"]["ingredients"]["water"] and resources["milk"] >= MENU["latte"]["ingredients"]["milk"] and resources["coffee"] >= MENU["latte"]["ingredients"]["coffee"]:
+            resources["water"] -= MENU["latte"]["ingredients"]["water"]
+            resources["milk"] -= MENU["latte"]["ingredients"]["milk"]
+            resources["coffee"] -= MENU["latte"]["ingredients"]["coffee"]
+            print("Here is your latte. Enjoy!")
+            MachineMoney += MENU["latte"]["cost"]
+        else:
+            print("Sorry, there is not enough resources to make a latte.")
+
+    elif answer == "3":
+        if resources["water"] >= MENU["cappuccino"]["ingredients"]["water"] and resources["milk"] >= MENU["cappuccino"]["ingredients"]["milk"] and resources["coffee"] >= MENU["cappuccino"]["ingredients"]["coffee"]:
+            resources["water"] -= MENU["cappuccino"]["ingredients"]["water"]
+            resources["milk"] -= MENU["cappuccino"]["ingredients"]["milk"]
+            resources["coffee"] -= MENU["cappuccino"]["ingredients"]["coffee"]
+            print("Here is your cappuccino. Enjoy!")
+            MachineMoney += MENU["cappuccino"]["cost"]
+        else:
+            print("Sorry, there is not enough resources to make a cappuccino.")
+
+
+    elif answer == "5":
+        printoff()
+        machine_on = False
+        ## create a while loop to keep the coffee machine running until the user decides to turn it off.
+
+while machine_on == False: 
+    
+
+
 
 

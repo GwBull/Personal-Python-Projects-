@@ -33,6 +33,8 @@ resources = {
 }
 ## create all the dictionaries and variables needed to run the coffee machine program.`
 
+answer = input("please select a function (espresso(1)/latte(2)/cappuccino(3)): ")
+
 match MENU:
     case "1":
         print("Espresso")
@@ -100,4 +102,7 @@ def print_report():
 def calculate_change(total, cost):
     change = total - cost
     return change
-def
+### create a function to calculate the total amount of money inserted by the user in the form of coins.
+def calculatetotal_money(dimes, nickels, qaurters, pennies):
+    total = pennies*0.01 + nickels*0.05 + dimes*0.10 + qaurters*0.25
+    return total

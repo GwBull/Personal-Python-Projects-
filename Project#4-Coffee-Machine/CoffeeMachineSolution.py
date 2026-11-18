@@ -52,7 +52,12 @@ def printoff(print_report):
     print("the total money in the machine is: $", MachineMoney)
     print("the total resources left in the machine are: ")
     print_report()
-    exit()  
+
+def printstayoff(print_report):
+    print("The coffee machine is still off. Please turn it on to use it.")
+    print("the total money in the machine is: $", MachineMoney)
+    print("the total resources left in the machine are: ")
+    print_report()
 
 logo = r"""
       ( (
@@ -145,8 +150,17 @@ while  machine_on == True:
         ## create a while loop to keep the coffee machine running until the user decides to turn it off.
 
 while machine_on == False: 
-    
 
+    print("The coffee machine is off. please turn it on(1) or print report(2): ")
+    answeroff = input("Enter your choice: ")
 
+    match answeroff:
+        case "1":
+            confirm = input("Are you sure you want to turn on the coffee machine? (yes/no): ")
+            if confirm.lower() == "yes":
+                machine_on = True
+            else:
+                print("The coffee machine remains off.")
 
-
+        case "2":
+            printstayoff(print_report)

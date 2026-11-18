@@ -11,4 +11,4 @@ A simple command-line slot machine game written in Python. Place a bet, spin thr
 
 A simple command-line tool that encodes and decoded based on user text input and shift amount
 
-[Simple Blackjack Game](https://github.com/GwBull/Personal-Python-Projects-/tree/main/Project%233-BlackJack-Game)
+[Project #3: Simple Blackjack Game](https://github.com/GwBull/Personal-Python-Projects-/tree/main/Project%233-BlackJack-Game)

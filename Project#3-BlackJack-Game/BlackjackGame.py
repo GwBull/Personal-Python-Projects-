@@ -51,11 +51,15 @@ if choice == 'y':
         if hitchoice == 'y':
             player_hand.append(random.randint(1, 11))
             print(f"Your cards: {player_hand}, current score: {sum(player_hand)}")
-
+        else: 
+            if hitchoice == 'n':
+                print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
+                break
         if sum(player_hand) > 21:
             print("you went over. You lose 😭")
         elif sum(player_hand) == 21:
             print("You got 21! You win! 🥳")
+            break
         else:
             print("Type 'y' to get another card, type 'n' to pass: ")
             print(f"Your cards: {player_hand}, current score: {sum(player_hand)}")

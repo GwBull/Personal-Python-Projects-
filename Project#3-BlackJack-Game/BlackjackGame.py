@@ -28,7 +28,7 @@ if choice == 'y':
     player_score = 0
 
     dealer_hand.append(random.randint(1, 11))
-
+## assigns the dealer score to the sum of the dealer hand
     player_hand.append(random.randint(1, 11))
     player_hand.append(random.randint(1, 11))
     ## assigns the player score to the sum of the player hand

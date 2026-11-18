@@ -33,7 +33,10 @@ resources = {
 }
 ## create all the dictionaries and variables needed to run the coffee machine program.`
 
-answer = input("please select a function (espresso(1)/latte(2)/cappuccino(3)): ")
+MachineMoney = 0
+
+
+answer = input("please select a function (espresso(1)/latte(2)/cappuccino(3) OR report(4)): ")
 
 match MENU:
     case "1":
@@ -42,7 +45,7 @@ match MENU:
         print("Latte")
     case "3":
         print("Cappuccino")
-    case "report":
+    case "4":
         print_report()
     case _:
         print("Invalid choice")
@@ -52,6 +55,7 @@ if answer == "1":
         resources["water"] -= MENU["espresso"]["ingredients"]["water"]
         resources["coffee"] -= MENU["espresso"]["ingredients"]["coffee"]
         print("Here is your espresso. Enjoy!")
+        MachineMoney += MENU["espresso"]["cost"]
     else:
         print("Sorry, there is not enough resources to make an espresso.")
 
@@ -81,6 +85,7 @@ elif answer == "2":
         resources["milk"] -= MENU["latte"]["ingredients"]["milk"]
         resources["coffee"] -= MENU["latte"]["ingredients"]["coffee"]
         print("Here is your latte. Enjoy!")
+        MachineMoney += MENU["latte"]["cost"]
     else:
         print("Sorry, there is not enough resources to make a latte.")
 
@@ -90,6 +95,7 @@ elif answer == "3":
         resources["milk"] -= MENU["cappuccino"]["ingredients"]["milk"]
         resources["coffee"] -= MENU["cappuccino"]["ingredients"]["coffee"]
         print("Here is your cappuccino. Enjoy!")
+        MachineMoney += MENU["cappuccino"]["cost"]
     else:
         print("Sorry, there is not enough resources to make a cappuccino.")
 

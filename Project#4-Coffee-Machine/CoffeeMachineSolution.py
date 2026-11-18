@@ -31,6 +31,22 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+
+## start of the function to print the report of the resources available in the coffee machine.
+def print_report():
+    print("Report of resources available in the coffee machine:")
+    print(f"Water: {resources['water']}ml")
+    print(f"Milk: {resources['milk']}ml")
+    print(f"Coffee: {resources['coffee']}g")
+## create a function to calculate the change to be returned to the user after they have paid for their coffee.
+def calculate_change(total, cost):
+    change = total - cost
+    return change
+### create a function to calculate the total amount of money inserted by the user in the form of coins.
+def calculatetotal_money(dimes, nickels, qaurters, pennies):
+    total = pennies*0.01 + nickels*0.05 + dimes*0.10 + qaurters*0.25
+    return total
+
 logo = r"""
       ( (
        ) )
@@ -108,16 +124,4 @@ elif answer == "3":
     else:
         print("Sorry, there is not enough resources to make a cappuccino.")
 
-## start of the function to print the report of the resources available in the coffee machine.
-def print_report():
-    print(f"Water: {resources['water']}ml")
-    print(f"Milk: {resources['milk']}ml")
-    print(f"Coffee: {resources['coffee']}g")
-## create a function to calculate the change to be returned to the user after they have paid for their coffee.
-def calculate_change(total, cost):
-    change = total - cost
-    return change
-### create a function to calculate the total amount of money inserted by the user in the form of coins.
-def calculatetotal_money(dimes, nickels, qaurters, pennies):
-    total = pennies*0.01 + nickels*0.05 + dimes*0.10 + qaurters*0.25
-    return total
+

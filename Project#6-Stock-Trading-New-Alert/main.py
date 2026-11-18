@@ -25,12 +25,21 @@ stock_params = {
 ##This allows us to retrieve the daily stock data for the specified stock symbol (TSLA) using our API key.
 
 api_response = requests.get(STOCK_ENDPOINT, params=stock_params)
+
 ## uses the requests library to make a GET request to the Alpha Vantage API endpoint for daily stock data. The parameters for the request include the function (TIME_SERIES_DAILY), the stock symbol (TSLA), and the API key. The response from the API is stored in the variable api_response.
 ## these are alpha vantage api parameters that are used to retrieve daily stock data for a specific stock symbol (in this case, TSLA) using the Alpha Vantage API. The parameters include the function (TIME_SERIES_DAILY), the stock symbol (TSLA), and the API key (STOCK_API_KEY). These parameters are passed as a dictionary to the requests.get() method to make a GET request to the Alpha Vantage API endpoint for daily stock data.
+
 data = api_response.json()["Time Series (Daily)"]
-## converts the response from the API (which is in JSON format) into a Python dictionary using
-## the json() method.
-## print the repsone for the api using the parameter into json format.
+
+# turns the dictionary into a list so we can get days by POSITION instead of by date
+#   data.items()   gives each (date, prices) pair
+#   (key, value)   key = the date, value = that day's prices
+#   value          keep only the prices and drop the date
+#   [ ]            collect them into a new list
+# the API sends the newest day first and only includes days the market was open,
+# so data_list[0] is always the newest trading day and data_list[1] is the one before
+# (weekends and holidays are skipped automatically)
+
 print(data["2026-11-17"])  
 ## prints the daily stock data for the date "2026-11-17" from the data dictionary. 
 ## The data dictionary contains the daily stock data for TSLA, and the key "2026-11-17" corresponds to the specific date for which we want to retrieve the stock data.

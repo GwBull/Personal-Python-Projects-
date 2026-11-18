@@ -1,5 +1,7 @@
 # TODO: 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”
 # TODO: Print report.
+
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -164,3 +166,6 @@ while machine_on == False:
 
         case "2":
             printstayoff(print_report)
+            print("The coffee machine is still off. Please turn it on to use it.")
+
+           

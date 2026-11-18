@@ -24,7 +24,7 @@ match answer:
         print("Invalid choice")
 
 if answer == "1":
-    message = input("Enter the message you want to encrypt: ")
+    message = input("Enter the message you want to encrypt: ").isupper()
 
     result = ""
         ## start with an empty string to store the result
@@ -45,7 +45,7 @@ if answer == "1":
         ### print the final encrypted message
 
 elif answer == "2":
-    message = input("Enter the message you want to decrypt: ")
+    message = input("Enter the message you want to decrypt: ").isupper()
 
     result = ""
     for char in message:
@@ -66,7 +66,7 @@ elif answer == "2":
 
 else:
     print("Invalid choice. Please enter 1 for encrypt or 2 for decrypt.")
-    
+
 
   
 

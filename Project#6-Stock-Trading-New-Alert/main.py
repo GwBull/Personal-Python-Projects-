@@ -31,7 +31,9 @@ data = api_response.json()["Time Series (Daily)"]
 ## converts the response from the API (which is in JSON format) into a Python dictionary using
 ## the json() method.
 ## print the repsone for the api using the parameter into json format.
-print(data)
+print(data["2026-11-17"])  
+## prints the daily stock data for the date "2026-11-17" from the data dictionary. 
+## The data dictionary contains the daily stock data for TSLA, and the key "2026-11-17" corresponds to the specific date for which we want to retrieve the stock data.
 
 
 #TODO 2. - Get the day before yesterday's closing stock price

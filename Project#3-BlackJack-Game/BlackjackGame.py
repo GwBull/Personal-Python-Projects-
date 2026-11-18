@@ -42,7 +42,6 @@ if choice == 'y':
     print(f"Your cards: {player_hand}, current score: {sum(player_hand)}")
     print(f"Dealer's first card: {dealer_hand[0]}")
 
-    print("Type 'y' to get another card, type 'n' to pass: ")
 
     while True:
 
@@ -57,13 +56,13 @@ if choice == 'y':
                 break
         if sum(player_hand) > 21:
             print("you went over. You lose 😭")
+            break
         elif sum(player_hand) == 21:
             print("You got 21! You win! 🥳")
             break
-        else:
-            print("Type 'y' to get another card, type 'n' to pass: ")
-            print(f"Your cards: {player_hand}, current score: {sum(player_hand)}")
-            
+        elif hitchoice == 'n':
+                print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
+                break
 
         
 

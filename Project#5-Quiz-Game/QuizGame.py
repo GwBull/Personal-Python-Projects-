@@ -5,6 +5,18 @@ from data import question_data
 
 ## this gets the question data from the question_model file and creates a list of question objects
 
+logo = r"""
+   ___________
+  |  _______  |
+  | |   ?   | |
+  | |  ???  | |
+  | |_______| |
+  |___________|
+   QUIZ  GAME
+  True or False?
+"""
+print(logo)
+
 question_bank = []
 
 for question in question_data:

@@ -25,20 +25,32 @@ match answer:
 
 if answer == "1":
     message = input("Enter the message you want to encrypt: ")
+
+    result = ""
+        ## start with an empty string to store the result
+    for char in message:
+            ## loop thorough each character in the message
+            if char in alphabet:
+                ## check if the character is in the alphabet
+                position = alphabet.index(char)
+                ## find the index of the character in the alphabet a = 0 b=1 c= 3 etc
+                new_position = (position + 3) 
+                ## add 3 to the index to shift the character by 3 positions
+                result = result + alphabet[new_position]
+                ## add the new character to the result string
+            else:
+                result = result + char
+                ### if the character is not in the alphabet, add it to the result string as is
+    print(f"Encrypted message: {result}")
+        ### print the final encrypted message
+
 elif answer == "2":
     message = input("Enter the message you want to decrypt: ")
+
+    result = ""
+
 else:
     print("Invalid choice. Please enter 1 for encrypt or 2 for decrypt.")
 
-    result = ""
-    for char in message:
-        if char in alphabet:
-            position = alphabet.index(char)
-            new_position = (position + 3) 
-            result = result + alphabet[new_position]
-        else:
-            result = result + char
-    print(f"Encrypted message: {result}")
-            
-
+  
 

@@ -21,7 +21,7 @@ choice = input().lower()
 if choice == 'y':
     print("Great! Let's start the game.")
     # Add your game logic here
-    dealer_hand = []s
+    dealer_hand = []
     ##create the dealer hand and player hand
     player_hand = []
 

@@ -19,6 +19,6 @@ A command-line Blackjack game in Python where you play against the computer deal
 
 A command-line coffee machine in Python that takes orders, checks ingredients, handles coin payments and gives change, all built with nested dictionaries and functions.
 
-**[Quiz Game](https://github.com/GwBull/Personal-Python-Projects-/tree/main/Project%235-Quiz-Game)** 🚧 *(In progress)* – 
+🧠 **[Project 5 – Quiz Game](https://github.com/GwBull/Personal-Python-Projects-/tree/main/Project%235-Quiz-Game)** 🚧 *(In progress)* 
 
 A command-line True/False quiz game in Python that uses classes to build a question bank, track your score and move through the questions.

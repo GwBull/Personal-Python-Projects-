@@ -1,14 +1,26 @@
 
+logo = r"""
+  _____                           
+ / ____|                          
+| |     __ _  ___  ___  __ _ _ __ 
+| |    / _` |/ _ \/ __|/ _` | '__|
+| |___| (_| |  __/\__ \ (_| | |   
+ \_____\__,_|\___||___/\__,_|_|   
+  _____ _       _               
+ / ____(_)     | |              
+| |     _ _ __ | |__   ___ _ __ 
+| |    | | '_ \| '_ \ / _ \ '__|
+| |____| | |_) | | | |  __/ |   
+ \_____|_| .__/|_| |_|\___|_|   
+         | |                    
+         |_|                    
 
+   A B C D E  -->  D E F G H
+"""
+print(logo)
 
 alphabet=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 ## creates a LIST/ARRAY OF all letters in the alphabet
-
-print("=================================")
-print("  🔐  CAESAR CIPHER DECODER  🔐")
-print("=================================")
-print("  A B C D E  -->  D E F G H")
-print("=================================")
 
 choice = input("Would you like to encrypt or decrypt a message? (1 for encrypt, 2 for decrypt): ")
 ##prompt user for input to choose between encrypting or decrypting a message

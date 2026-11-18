@@ -41,9 +41,7 @@ match MENU:
     case "3":
         print("Cappuccino")
     case "report":
-        print(f"Water: {resources['water']}ml")
-        print(f"Milk: {resources['milk']}ml")
-        print(f"Coffee: {resources['coffee']}g")
+        print_report()
     case _:
         print("Invalid choice")
 
@@ -72,6 +70,9 @@ elif answer == "2":
     if total < MENU["latte"]["cost"]:
         print("Sorry, that's not enough money. Money refunded.")
 
+    change = calculate_change(total, MENU["latte"]["cost"])
+    if change > 0:
+        print(f"Here is your change: ${change:.2f}")
 
     if resources["water"] >= MENU["latte"]["ingredients"]["water"] and resources["milk"] >= MENU["latte"]["ingredients"]["milk"] and resources["coffee"] >= MENU["latte"]["ingredients"]["coffee"]:
         resources["water"] -= MENU["latte"]["ingredients"]["water"]
@@ -89,3 +90,14 @@ elif answer == "3":
         print("Here is your cappuccino. Enjoy!")
     else:
         print("Sorry, there is not enough resources to make a cappuccino.")
+
+## start of the function to print the report of the resources available in the coffee machine.
+def print_report():
+    print(f"Water: {resources['water']}ml")
+    print(f"Milk: {resources['milk']}ml")
+    print(f"Coffee: {resources['coffee']}g")
+## create a function to calculate the change to be returned to the user after they have paid for their coffee.
+def calculate_change(total, cost):
+    change = total - cost
+    return change
+def

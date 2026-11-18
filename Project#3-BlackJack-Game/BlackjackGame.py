@@ -44,9 +44,13 @@ if choice == 'y':
 
     print("Type 'y' to get another card, type 'n' to pass: ")
 
-    if input().lower() == 'y':
-        player_hand.append(random.randint(1, 11))
-        print(f"Your cards: {player_hand}, current score: {sum(player_hand)}")
+    while True:
+
+        hitchoice = input("Type 'y' to get another card, type 'n' to pass: ")
+
+        if hitchoice == 'y':
+            player_hand.append(random.randint(1, 11))
+            print(f"Your cards: {player_hand}, current score: {sum(player_hand)}")
 
         if sum(player_hand) > 21:
             print("you went over. You lose 😭")

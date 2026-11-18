@@ -21,7 +21,7 @@ choice = input().lower()
 if choice == 'y':
     print("Great! Let's start the game.")
     # Add your game logic here
-    dealer_hand = []
+    dealer_hand = []s
     ##create the dealer hand and player hand
     player_hand = []
 
@@ -31,5 +31,17 @@ if choice == 'y':
 
     player_hand.append(random.randint(1, 11))
     player_hand.append(random.randint(1, 11))
+    ## assigns the player score to the sum of the player hand
+
+    print(f"Your cards: {player_hand}, current score: {sum(player_hand)}")
+    print(f"Dealer's first card: {dealer_hand[0]}")
+
+    print("Type 'y' to get another card, type 'n' to pass: ")
+
+    if input().lower() == 'y':
+        player_hand.append(random.randint(1, 11))
+
+    elif input().lower() == 'n':
+        print(f"Your final hand: {player_hand}, final score: {sum(player_hand)}")
 
     

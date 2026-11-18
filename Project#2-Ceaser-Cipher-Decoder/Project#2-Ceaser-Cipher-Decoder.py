@@ -30,7 +30,15 @@ elif answer == "2":
 else:
     print("Invalid choice. Please enter 1 for encrypt or 2 for decrypt.")
 
+    result = ""
     for char in message:
-        if char in alphabet
+        if char in alphabet:
+            position = alphabet.index(char)
+            new_position = (position + 3) 
+            result = result + alphabet[new_position]
+        else:
+            result = result + char
+    print(f"Encrypted message: {result}")
+            
 
 

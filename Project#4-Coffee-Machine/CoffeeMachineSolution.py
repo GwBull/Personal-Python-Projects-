@@ -31,14 +31,23 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+logo = r"""
+      ( (
+       ) )
+    ........
+    |      |]
+    \      /
+     `----'
+  COFFEE MACHINE
+"""
 ## create all the dictionaries and variables needed to run the coffee machine program.`
 
 MachineMoney = 0
 
-
+print(logo)
 answer = input("please select a function (espresso(1)/latte(2)/cappuccino(3) OR report(4)): ")
 
-match MENU:
+match answer:
     case "1":
         print("Espresso")
     case "2":

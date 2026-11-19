@@ -29,9 +29,12 @@ data = api_response.json()["Time Series (Daily)"]
 
 data_list = [value for (key, value) in data.items()]
 
-
 # turns the dictionary into a list so we can get days by POSITION instead of by date
 #   data.items()   gives each (date, prices) pair
+# the dictionary is built when we say api.response.json()["Time Series (Daily)"], which returns a dictionary where each key is a date and each value is another dictionary containing the stock prices for that date.
+# that dictionary is called data, and it contains the daily stock data for TSLA. The items() method is called on the data dictionary to get a list of (key, value) pairs, where each key is a date and each value is another dictionary containing the stock prices for that date.
+# time series daily is a dicitonary that returned by the api key where each date is a key 
+# this is returned but not explicitly printed in the code, but it is used to create the data_list variable, which is a list of dictionaries containing the stock prices for each date. The list comprehension iterates over each (key, value) pair in the data dictionary and extracts only the value (the dictionary containing the stock prices) to create a new list called data_list.
 #   (key, value)   key = the date, value = that day's prices
 #   value          keep only the prices and drop the date
 #   [ ]            collect them into a new list
@@ -41,7 +44,7 @@ data_list = [value for (key, value) in data.items()]
 
 print(data_list[0])  
 
-if differnce > 0:
+if difference > 0:
     print (f"TSLA: 🔺{differnce}%")
 else:
     print (f"TSLA: 🔻{differnce}%")
@@ -64,7 +67,6 @@ else:
 #TODO 6. - Instead of printing ("Get News"), use the News API to get articles related to the COMPANY_NAME.
 
 #TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
-
 
     ## STEP 3: Use twilio.com/docs/sms/quickstart/python
     #to send a separate message with each article's title and description to your phone number. 
